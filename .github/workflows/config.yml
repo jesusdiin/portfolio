@@ -28,4 +28,4 @@ jobs:
         cache: 'npm'
     - run: npm i
     - run: npm run build
-    - run: mv /home/ubuntu/web/actions-runner/portfolio/portfolio/portfolio/dist /home/ubuntu/web/jesus_portfolio
+    - run: mv /home/ubuntu/web/actions-runner/portfolio/portfolio/portfolio/dist/* /home/ubuntu/web/jesus_portfolio
