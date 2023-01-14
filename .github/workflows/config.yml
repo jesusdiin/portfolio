@@ -28,4 +28,4 @@ jobs:
         cache: 'npm'
     - run: npm i
     - run: npm run build
-    - run: cp /web/actions-runner/portfolio/portfolio/portfolio/dist/* /var/www/html/jesus_portfolio
+    - run: cp -r /web/actions-runner/portfolio/portfolio/portfolio/dist /var/www/html/jesus_portfolio
