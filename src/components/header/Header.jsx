@@ -47,7 +47,7 @@ const Header = () => {
                         </li>
                     </ul>
 
-                    <i class="uil uil-times nav_close test"></i>
+                    <i class="uil uil-times nav_close"></i>
 
                 </div>
 
