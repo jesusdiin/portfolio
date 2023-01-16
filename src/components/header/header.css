@@ -62,7 +62,7 @@
 
         .nav_menu {
             position: fixed;
-            bottom: 0;
+            bottom: -100%;
             left: 0;
             width: 100%;
             background-color: var(--body-color);
@@ -70,6 +70,11 @@
             box-shadow: 0 -1px 4px rgba(0,0,0,0.15);
             border-radius: 1.5rem 1.5rem 0 0;
             transition: .3s;
+        }
+
+        /* Show Menu */
+        .show_menu {
+            bottom: 0;
         }
 
         .nav_list {
@@ -95,6 +100,11 @@
             color: var(--title-color-dark);
         }
 
+         .nav_toggle {
+            font-size: 1.1rem;
+            cursor: pointer;
+         }
+
         .nav_icon,
         .nav_close,
         .nav_toggle {
@@ -103,6 +113,21 @@
 
 
     }
+
+/* Small Devices */
+	@media screen and (max-width: 350px){
+        .nav_menu {
+            padding: 2rem 0.25rem 4rem;
+        }
+
+        .nav_list {
+            column-gap: 0;
+             
+        }
+	}
+
+
+     
 
 /* ===== TEST ===== */
 .test {

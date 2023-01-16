@@ -175,3 +175,15 @@ img {
 	@media screen and (max-width: 768px){
 
 	}
+
+	@media screen and (max-width: 576px){
+
+	}
+
+	/* Small devices */
+	@media screen and (max-width: 350px){
+		.container {
+			margin-left: var(--mb-1);
+			margin-right: var(--mb-1);
+		}
+	}
