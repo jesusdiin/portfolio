@@ -1,6 +1,6 @@
 .home_content {
-    grid-template-columns: 11px repeat(2, 1fr);
-    padding-top: 5.5ren;
+    grid-template-columns: 116px repeat(2, 1fr);
+    padding-top: 5.5rem;
     column-gap: 2rem;
     align-items: center;
 }
@@ -23,6 +23,18 @@
 .home_title {
     font-size: var(--big-font-size);
     margin-bottom: var(--mb-0-25);
+}
+
+.home_hand {
+    width: 38px;
+    height: 38px;
+    margin-left: 0.4rem;
+}
+
+.home_subtitle {
+    position: relative;
+    font-size: var(--h3-font-size);
+    margin-left: 0.4rem;
 }
 
 .home_img {

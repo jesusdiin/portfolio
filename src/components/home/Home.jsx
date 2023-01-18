@@ -1,7 +1,7 @@
 import React from 'react';
-import Data from './Data';
 import './home.css';
 import Social from './Social';
+import Data from './Data';
 
 
 const Home = () => {
