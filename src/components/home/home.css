@@ -63,7 +63,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    box-shadow: inset 0 0 0 3px rgb(255 255 255 / 40%);
+    box-shadow: inset 0 0 0 5px rgb(255 255 255 / 40%);
     order: 1;
     justify-self: center;
     width: 300px;
@@ -114,3 +114,70 @@
     font-size: 1.25rem; 
     color: var(--title-color);
 }
+
+
+/* ===== Breakpoints ===== */
+	/* Devices larges */
+	@media screen and (max-width: 992px){
+        .home_content {
+            grid-template-columns: 100px repeat(2, 1fr);
+            column-gap: 1.25rem;
+        }
+
+        .home_hand {
+            width: 26px;
+            height: 26px;
+        }
+
+        .home_subtitle {
+            padding-left: 3.75rem;
+            margin-bottom: var(--mb-1);
+        }
+
+        .home_subtitle::before {
+            width: 42px;
+            top: 0.8rem;
+        }
+
+        .home_description {
+            max-width: initial;
+            margin-bottom: var(--mb-2-5);
+        }
+
+        .home_img {
+            width: 250px;
+            height: 250px;
+            box-shadow: inset 0 0 0 4px rgb(255 255 255 / 40%);
+        }
+
+        .home_scroll {
+            margin-left: 7.5rem;
+        }
+
+	}
+
+	/* Medium devices */
+	@media screen and (max-width: 768px){
+        .home_content {
+            grid-template-columns: 0.5fr 3fr;
+            padding-top: 3.5rem;
+        }
+
+        .home_img {
+            order: initial;
+            justify-self: initial;
+        }
+
+        .home_data {
+            grid-column: 1/3;
+        }
+	}
+
+	@media screen and (max-width: 576px){
+
+	}
+
+	/* Small devices */
+	@media screen and (max-width: 350px){
+
+	}
