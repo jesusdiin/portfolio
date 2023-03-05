@@ -18,7 +18,7 @@ const  Services = () => {
 					<div>
 						<i className="uil uil-web-grid services_icon"></i>
 						<h3 className="services_title">
-							Product <br /> Designer
+							Web <br /> Development
 						</h3>
 					</div>
 
@@ -27,7 +27,7 @@ const  Services = () => {
 					<div className={toggleState === 1 ? "services_modal active_modal" : "services_modal"}>
 						<div className="services_modal_content">
 							<i onClick={() => {toggleTab(0)}} className="uil uil-times services_modal_close"></i>
-							<h3 className="services_modal_title">Product Disegner</h3>
+							<h3 className="services_modal_title">Web Development</h3>
 							<p className="services_modal_description">Service with more than 1 year of experience. Providing quality work to clients and companies.</p>
 
 							<ul className="services_modal_services grid">
@@ -40,7 +40,7 @@ const  Services = () => {
 								<li className="services_modal_service">
 									<i className="uil uil-check-circle services_modal_icon"></i>
 									<p className="services_modal_info">
-										Development Custom software .
+										Development Custom software.
 									</p>
 								</li>
 								<li className="services_modal_service">
@@ -63,7 +63,7 @@ const  Services = () => {
 				<div className="services_content">
 					<div>
 						<i className="uil uil-edit services_icon"></i>
-						<h3 className="services_title">LOrem  impsum</h3>
+						<h3 className="services_title">Custom Software</h3>
 					</div>
 
 					<span onClick={() => toggleTab(2)}className="services_button">View More <i className="uil uil-arrow-right services_button_icon"></i></span>
@@ -71,32 +71,32 @@ const  Services = () => {
 					<div className={toggleState === 2 ? "services_modal active_modal" : "services_modal"}>
 						<div className="services_modal_content">
 							<i onClick={() => {toggleTab(0)}} className="uil uil-times services_modal_close"></i>
-							<h3 className="services_modal_title">Lorem Ipsum</h3>
+							<h3 className="services_modal_title">Custom Software</h3>
 							<p className="services_modal_description">Service with more than 1 year of experience. Providing quality work to clients and companies.</p>
 
 							<ul className="services_modal_services grid">
 								<li className="services_modal_service">
 									<i className="uil uil-check-circle services_modal_icon"></i>
 									<p className="services_modal_info">
-										I develop the user interface
+										I develop custom software
 									</p>
 								</li>
 								<li className="services_modal_service">
 									<i className="uil uil-check-circle services_modal_icon"></i>
 									<p className="services_modal_info">
-										Development Custom software .
+										Development cross platform software. Web, Desktop, Mobile.
 									</p>
 								</li>
 								<li className="services_modal_service">
 									<i className="uil uil-check-circle services_modal_icon"></i>
 									<p className="services_modal_info">
-										Web page development.
+										Support, update and maintenance.
 									</p>
 								</li>
 								<li className="services_modal_service">
 									<i className="uil uil-check-circle services_modal_icon"></i>
 									<p className="services_modal_info">
-										I position your company brand. SEO
+										Automation and Optimization of Bots for messaging services
 									</p>
 								</li>
 							</ul>
