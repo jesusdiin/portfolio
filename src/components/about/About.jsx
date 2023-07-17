@@ -1,6 +1,7 @@
 import React from 'react';
 import './about.css';
-import AbotImg from '../../assets/profile.jpg';
+import AboutImg from '../../assets/profile_01.webp';
+import ProfileImg from '../../assets/profile_02.webp';
 // import CV from '../../assets/jesus-cv.pdf';
 import Info from './Info';
 
@@ -12,7 +13,7 @@ function About() {
 			<span className="section_subtitle">My introduction</span>
 
 			<div className="about_container container grid">
-				<img src={AbotImg} alt="" className="about_img" />
+				<img src={AboutImg} alt="" className="about_img" />
 
 				<div className="about_data">
 					<Info />
