@@ -57,7 +57,7 @@
 .qualification_subtitle {
     display: inline-block;
     font-size: var(--small-font-size);
-    margin-bottom: var(--mb-1);
+    margin-bottom: var(--mb-0-75);
 }
 
 .qualification_calendar {
@@ -108,6 +108,17 @@
     .qualification_button {
        margin: 0 var(--mb-0-75);
     }
+
+    .qualification_sections {
+        display: flex;
+        /* grid-template-columns: 0.5fr; */
+        justify-content: center; 
+    }
+
+    .qualification_subtitle {
+        margin-bottom: var(--mb-0);
+    }
+    
 }
 
 	/* Small devices */
