@@ -32,7 +32,7 @@ function Contact() {
 						<div className="contact_card">
 							<i className="bx bx-mail-send contact_card_icon"></i>
 							<h3 className="contact_card_title">Email</h3>
-							<span className="contact_card_data">jesus@email.com</span>
+							<span className="contact_card_data">cjesus02hdz@gmail.com</span>
 
 							<a href="mailto:jesus@email.com" className="contact_button">Write me{" "}<i className="bx bx-right-arrow-alt contact_button_icon"></i></a>
 						</div>
@@ -40,9 +40,9 @@ function Contact() {
 						<div className="contact_card">
 							<i className="bx bxl-whatsapp contact_card_icon"></i>
 							<h3 className="contact_card_title">WhatsApp</h3>
-							<span className="contact_card_data">+52 81 3687 3826</span>
+							<span className="contact_card_data">+52 954 205 1979</span>
 
-							<a href="https://api.whatsapp.com/send?phone=528136873826&text=Hola, requiero más información sobre sus servicios!" className="contact_button">Write me{" "}<i className="bx bx-right-arrow-alt contact_button_icon"></i></a>
+							<a href="https://api.whatsapp.com/send?phone=529542051979&text=Hola, requiero más información sobre sus servicios!" className="contact_button">Write me{" "}<i className="bx bx-right-arrow-alt contact_button_icon"></i></a>
 						</div>
 					</div>
 				</div>
