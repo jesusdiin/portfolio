@@ -9,6 +9,34 @@ function Backend() {
 
 		<div className="skills_box">
 			<div className="skills_group">
+
+				<div className="skills_data">
+					<i className="bx bx-badge-check"></i>
+					<div>
+						<h3 className="skills_name">Python</h3>
+						<span className="skills_level">Intermediate</span>
+					</div>
+				</div>
+
+				<div className="skills_data">
+					<i className="bx bx-badge-check"></i>
+					<div>
+						<h3 className="skills_name">Postgres</h3>
+						<span className="skills_level">Basic</span>
+					</div>
+				</div>
+
+				<div className="skills_data">
+					<i className="bx bx-badge-check"></i>
+					<div>
+						<h3 className="skills_name">
+						Django
+						</h3>
+						<span className="skills_level">Intermediate</span>
+					</div>
+				</div>
+			</div>
+			<div className="skills_group">
 				<div className="skills_data">
 					<i className="bx bx-badge-check"></i>
 					<div>
@@ -30,7 +58,7 @@ function Backend() {
 				<div className="skills_data">
 					<i className="bx bx-badge-check"></i>
 					<div>
-						<h3 className="skills_name">FIrebase</h3>
+						<h3 className="skills_name">Firebase</h3>
 						<span className="skills_level">Basic</span>
 					</div>
 				</div>

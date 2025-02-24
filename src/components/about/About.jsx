@@ -2,7 +2,7 @@ import React from 'react';
 import './about.css';
 import AboutImg from '../../assets/profile_01.webp';
 import ProfileImg from '../../assets/profile_02.webp';
-// import CV from '../../assets/jesus-cv.pdf';
+import CV from '../../assets/CV.pdf';
 import Info from './Info';
 
 
@@ -22,7 +22,7 @@ function About() {
 						Web Developer Freelancer Jr, I create web pages with UI / UX user interface, i have one year of experiencie and many clients are happy with the projects carried out.
 					</p>
 
-					<a download='' href='' className="button button--flex">Download CV 
+					<a download="Jesús Hernández - CV 2025" href={CV} className="button button--flex">Download CV 
 						<svg
 							class="button_icon"
 							xmlns="http://www.w3.org/2000/svg"
