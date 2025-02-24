@@ -110,26 +110,42 @@ function Qualification() {
 							</div>
 
 							<div>
-								<h3 className="qualification_title">Freelance</h3>
-								<span className="qualification_subtitle">DEVF - Bootcamp</span>
+								<h3 className="qualification_title">Web Development</h3>
+								<span className="qualification_subtitle">Freelance</span>
 								<div className="qualification_calendar">
-									<i className="uil uil-calendar-alt"></i> 2020 - 2021
+									<i className="uil uil-calendar-alt"></i> 2021 - 2023
 								</div>
 							</div>
 						</div>
 
 						<div className="qualification_data">
 							<div>
-								<h3 className="qualification_title">Backend</h3>
-								<span className="qualification_subtitle">Dino Mx</span>
+								<h3 className="qualification_title">TI</h3>
+								<span className="qualification_subtitle">Instituto Euro Americano Juquila</span>
 								<div className="qualification_calendar">
-									<i className="uil uil-calendar-alt"></i> 2021 - 2022
+									<i className="uil uil-calendar-alt"></i> 2023 - 2024
 								</div>
 							</div>
 
 							<div>
 								<span className="qualification_rounder"></span>
 								<span className="qualification_line"></span>
+							</div>
+						</div>
+
+						<div className="qualification_data">
+							<div></div>
+							<div>
+								<span className="qualification_rounder"></span>
+								<span className="qualification_line"></span>
+							</div>
+
+							<div>
+								<h3 className="qualification_title">Programador Python</h3>
+								<span className="qualification_subtitle">Cayetano Enterprise</span>
+								<div className="qualification_calendar">
+									<i className="uil uil-calendar-alt"></i> 2024 - 2025
+								</div>
 							</div>
 						</div>
 						

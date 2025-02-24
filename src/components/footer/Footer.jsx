@@ -26,7 +26,7 @@ function Footer() {
 							<i className="bx bxl-instagram"></i>
 						</a>
 			
-						<a href="https://www.linkedin.com/in/jesus1hdz" className="footer_social_link" target='_blank'>
+						<a href="https://www.linkedin.com/in/jesusdiin" className="footer_social_link" target='_blank'>
 							<i className="bx bxl-linkedin"></i>
 						</a>
 			
