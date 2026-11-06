@@ -1,16 +1,19 @@
 import React from 'react';
+import { useLanguage } from '../../i18n/LanguageContext';
 import './about.css';
 import AboutImg from '../../assets/profile_01.webp';
 import ProfileImg from '../../assets/profile_02.webp';
-import CV from '../../assets/CV.pdf';
+import CV from '../../assets/CV_Jesus_Hernandez_2026.pdf';
 import Info from './Info';
 
 
 function About() {
+	const { t } = useLanguage();
+
 	return (
 		<section className="about section" id="about">
-			<h2 className="section_title">About Me</h2>
-			<span className="section_subtitle">My introduction</span>
+			<h2 className="section_title">{t('about.title')}</h2>
+			<span className="section_subtitle">{t('about.subtitle')}</span>
 
 			<div className="about_container container grid">
 				<img src={AboutImg} alt="" className="about_img" />
@@ -18,13 +21,15 @@ function About() {
 				<div className="about_data">
 					<Info />
 
-					<p className="about_description">
-						Web Developer Freelancer Jr, I create web pages with UI / UX user interface, i have one year of experiencie and many clients are happy with the projects carried out.
-					</p>
+					<div className="about_description">
+						{t('about.description').map((paragraph, i) => (
+							<p key={i}>{paragraph}</p>
+						))}
+					</div>
 
-					<a download="Jesús Hernández - CV 2025" href={CV} className="button button--flex">Download CV 
+					<a download="Jesús Hernández - CV 2026" href={CV} className="button button--flex">{t('about.cv')}{" "}
 						<svg
-							class="button_icon"
+							className="button_icon"
 							xmlns="http://www.w3.org/2000/svg"
 							width="24"
 							height="24"

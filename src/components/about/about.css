@@ -44,6 +44,10 @@
 	margin-bottom: var(--mb-2-5);
 }
 
+.about_description p + p {
+	margin-top: var(--mb-0-75, .75rem);
+}
+
 
 
 /* ===== Breakpoints ===== */

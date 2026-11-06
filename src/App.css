@@ -184,6 +184,10 @@ img {
 	/* Medium devices */
 	@media screen and (max-width: 768px){
 
+		:root {
+			--header-height: 3.5rem;
+		}
+
 		body {
 			margin: 0 0 var(--header-height) 0;
 		}

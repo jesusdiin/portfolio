@@ -1,6 +1,9 @@
 import React from 'react'
+import { useLanguage } from '../../i18n/LanguageContext';
 
 function ScrollDown() {
+	const { t } = useLanguage();
+
 	return (
 		<div className="home_scroll">
 			<a href="" className="home_scroll_button button--flex">
@@ -8,7 +11,7 @@ function ScrollDown() {
 				<svg
 				width="32px"
 				height="32px"
-				class="home_scroll_mouse"
+				className="home_scroll_mouse"
 				viewBox="0 0 247 390"
 				version="1.1"
 				xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +25,7 @@ function ScrollDown() {
 				}}
 			>
 				<path
-				class="wheel"
+				className="wheel"
 				d="M123.359,79.775l0,72.843"
 				style={{
 					fill: 'none',
@@ -41,9 +44,9 @@ function ScrollDown() {
 				></path>
 				</svg>
 				<span className="home_scroll_name">
-					Scroll Down
+					{t('home.scroll')}
 				</span>
-				<i class='uil uil-arrow-down home_scroll_arrow'></i>
+				<i className='uil uil-arrow-down home_scroll_arrow'></i>
 			</a>
 		</div>
 	)

@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
 import './header.css';
+import { useLanguage } from '../../i18n/LanguageContext';
+
+const NAV_ITEMS = [
+    { href: '#home', icon: 'uil-estate', key: 'home' },
+    { href: '#about', icon: 'uil-user', key: 'about' },
+    { href: '#skills', icon: 'uil-file-alt', key: 'skills' },
+    { href: '#services', icon: 'uil-briefcase-alt', key: 'services' },
+    { href: '#portfolio', icon: 'uil-scenery', key: 'portfolio' },
+    { href: '#contact', icon: 'uil-message', key: 'contact' },
+];
 
 const Header = () => {
+    const { lang, toggleLang, t } = useLanguage();
 
 	window.addEventListener('scroll', function () {
 		const header = document.querySelector('.header');
@@ -21,50 +32,35 @@ const Header = () => {
 
                 <div className={Toggle ? 'nav_menu show_menu' : 'nav_menu'}>
                     <ul className='nav_list grid'>
-                        <li className='nav_item'>
-                            <a href='#home' onClick={() => setActive('#home')} className={activeNav === '#home' ? 'nav_link active_link' : 'nav_link'}>
-                                <i className="uil uil-estate nav_icon"></i> Home
-                            </a>
-                        </li>
-
-                        <li className='nav_item'>
-                            <a href='#about' onClick={() => setActive('#about')} className={activeNav === '#about' ? 'nav_link active_link' : 'nav_link'}>
-                                <i className="uil uil-user nav_icon"></i> About
-                            </a>
-                        </li>
-
-                        <li className='nav_item'>
-                            <a href='#skills' onClick={() => setActive('#skills')} className={activeNav === '#skills' ? 'nav_link active_link' : 'nav_link'}>
-                                <i className="uil uil-file-alt nav_icon"></i> Skills
-                            </a>
-
-                        </li>
-
-                        <li className='nav_item'>
-                            <a href='#services' onClick={() => setActive('#services')} className={activeNav === '#services' ? 'nav_link active_link' : 'nav_link'}>
-                                <i className="uil uil-briefcase-alt nav_icon"></i> Services
-                            </a>
-                        </li>
-
-                        <li className='nav_item'>
-                            <a href='#portfolio' onClick={() => setActive('#portfolio')} className={activeNav === '#portfolio' ? 'nav_link active_link' : 'nav_link'}>
-                                <i className="uil uil-scenery nav_icon"></i> Portfolio
-                            </a>
-                        </li>
-
-                        <li className='nav_item'>
-                            <a href='#contact' onClick={() => setActive('#contact')} className={activeNav === '#contact' ? 'nav_link active_link' : 'nav_link'}>
-                                <i className="uil uil-message nav_icon"></i> Contact
-                            </a>
-                        </li>
+                        {NAV_ITEMS.map(({ href, icon, key }) => (
+                            <li className='nav_item' key={key}>
+                                <a href={href} onClick={() => setActive(href)} className={activeNav === href ? 'nav_link active_link' : 'nav_link'}>
+                                    <i className={`uil ${icon} nav_icon`}></i> {t(`nav.${key}`)}
+                                </a>
+                            </li>
+                        ))}
                     </ul>
 
                     <i className="uil uil-times nav_close" onClick={() => showMenu(!Toggle)}></i>
 
                 </div>
 
-                <div className="nav_toggle" onClick={() => showMenu(!Toggle)}>
-                    <i className="uil uil-apps"></i>
+                <div className="nav_actions">
+                    <button
+                        type="button"
+                        className="nav_lang"
+                        onClick={toggleLang}
+                        aria-label={t('nav.language')}
+                        title={t('nav.language')}
+                    >
+                        <span className={lang === 'en' ? 'nav_lang_option nav_lang_active' : 'nav_lang_option'}>EN</span>
+                        <span className="nav_lang_divider">|</span>
+                        <span className={lang === 'es' ? 'nav_lang_option nav_lang_active' : 'nav_lang_option'}>ES</span>
+                    </button>
+
+                    <div className="nav_toggle" onClick={() => showMenu(!Toggle)}>
+                        <i className="uil uil-apps"></i>
+                    </div>
                 </div>
 
             </nav>

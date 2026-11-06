@@ -1,7 +1,14 @@
 import React, {useState} from 'react';
 import './services.css';
+import { useLanguage } from '../../i18n/LanguageContext';
+
+const SERVICES = [
+	{ id: 1, key: 'web', icon: 'uil-web-grid' },
+	{ id: 2, key: 'software', icon: 'uil-edit' },
+];
 
 const  Services = () => {
+	const { t } = useLanguage();
 
 	const [toggleState, setToggleState] = useState(0);
 	const toggleTab = (index) => {
@@ -10,99 +17,47 @@ const  Services = () => {
 
 	return (
 		<section className="services section" id="services">
-			<h2 className="section_title">Services</h2>
-			<span className="section_subtitle">What i offer</span>
+			<h2 className="section_title">{t('services.title')}</h2>
+			<span className="section_subtitle">{t('services.subtitle')}</span>
 
 			<div className="services_container container grid">
-				<div className="services_content">
-					<div>
-						<i className="uil uil-web-grid services_icon"></i>
-						<h3 className="services_title">
-							Web <br /> Development
-						</h3>
-					</div>
+				{SERVICES.map(({ id, key, icon }) => {
+					const title = t(`services.${key}.title`);
+					// Card titles break after the first word so they fit the card width
+					const [first, ...rest] = title.split(' ');
 
-					<span className="services_button" onClick={() => toggleTab(1)}>View More <i className="uil uil-arrow-right services_button_icon"></i></span>
+					return (
+						<div className="services_content" key={key}>
+							<div>
+								<i className={`uil ${icon} services_icon`}></i>
+								<h3 className="services_title">
+									{first} <br /> {rest.join(' ')}
+								</h3>
+							</div>
 
-					<div className={toggleState === 1 ? "services_modal active_modal" : "services_modal"}>
-						<div className="services_modal_content">
-							<i onClick={() => {toggleTab(0)}} className="uil uil-times services_modal_close"></i>
-							<h3 className="services_modal_title">Web Development</h3>
-							<p className="services_modal_description">Service with more than 1 year of experience. Providing quality work to clients and companies.</p>
+							<span className="services_button" onClick={() => toggleTab(id)}>
+								{t('services.viewMore')} <i className="uil uil-arrow-right services_button_icon"></i>
+							</span>
 
-							<ul className="services_modal_services grid">
-								<li className="services_modal_service">
-									<i className="uil uil-check-circle services_modal_icon"></i>
-									<p className="services_modal_info">
-										I develop the user interface
-									</p>
-								</li>
-								<li className="services_modal_service">
-									<i className="uil uil-check-circle services_modal_icon"></i>
-									<p className="services_modal_info">
-										Development Custom software.
-									</p>
-								</li>
-								<li className="services_modal_service">
-									<i className="uil uil-check-circle services_modal_icon"></i>
-									<p className="services_modal_info">
-										Web page development.
-									</p>
-								</li>
-								<li className="services_modal_service">
-									<i className="uil uil-check-circle services_modal_icon"></i>
-									<p className="services_modal_info">
-										I position your company brand. SEO
-									</p>
-								</li>
-							</ul>
+							<div className={toggleState === id ? 'services_modal active_modal' : 'services_modal'}>
+								<div className="services_modal_content">
+									<i onClick={() => toggleTab(0)} className="uil uil-times services_modal_close"></i>
+									<h3 className="services_modal_title">{title}</h3>
+									<p className="services_modal_description">{t('services.modalDescription')}</p>
+
+									<ul className="services_modal_services grid">
+										{t(`services.${key}.items`).map((item) => (
+											<li className="services_modal_service" key={item}>
+												<i className="uil uil-check-circle services_modal_icon"></i>
+												<p className="services_modal_info">{item}</p>
+											</li>
+										))}
+									</ul>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-
-				<div className="services_content">
-					<div>
-						<i className="uil uil-edit services_icon"></i>
-						<h3 className="services_title">Custom Software</h3>
-					</div>
-
-					<span onClick={() => toggleTab(2)}className="services_button">View More <i className="uil uil-arrow-right services_button_icon"></i></span>
-
-					<div className={toggleState === 2 ? "services_modal active_modal" : "services_modal"}>
-						<div className="services_modal_content">
-							<i onClick={() => {toggleTab(0)}} className="uil uil-times services_modal_close"></i>
-							<h3 className="services_modal_title">Custom Software</h3>
-							<p className="services_modal_description">Service with more than 1 year of experience. Providing quality work to clients and companies.</p>
-
-							<ul className="services_modal_services grid">
-								<li className="services_modal_service">
-									<i className="uil uil-check-circle services_modal_icon"></i>
-									<p className="services_modal_info">
-										I develop custom software
-									</p>
-								</li>
-								<li className="services_modal_service">
-									<i className="uil uil-check-circle services_modal_icon"></i>
-									<p className="services_modal_info">
-										Development cross platform software. Web, Desktop, Mobile.
-									</p>
-								</li>
-								<li className="services_modal_service">
-									<i className="uil uil-check-circle services_modal_icon"></i>
-									<p className="services_modal_info">
-										Support, update and maintenance.
-									</p>
-								</li>
-								<li className="services_modal_service">
-									<i className="uil uil-check-circle services_modal_icon"></i>
-									<p className="services_modal_info">
-										Automation and Optimization of Bots for messaging services
-									</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+					);
+				})}
 			</div>
 		</section>
 	)

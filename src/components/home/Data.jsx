@@ -1,6 +1,9 @@
 import React from 'react'
+import { useLanguage } from '../../i18n/LanguageContext';
 
 function Data() {
+	const { t } = useLanguage();
+
 	return (
 		<>
 			<div className="home_data">
@@ -8,19 +11,14 @@ function Data() {
 					Jesús Hernández
 					<img className='home_hand' src='https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png'></img>
 				</h1>
-				<h3 className='home_subtitle'>
-					Web  Developer Freelancer
-				</h3>
+				<h3 className='home_subtitle'>{t('home.subtitle')}</h3>
 
-				<p className="home_description">
-					I'm Web Developer Jr based in Oaxaca México, and I'm very passionate and dedicated to my word.
-				</p>
-
+				<p className="home_description">{t('home.description')}</p>
 				<a href="#contact" className="button button--flex">
-					Say Hello
+					{t('home.button')}
 
 					<svg
-					class="button_icon"
+					className="button_icon"
 					xmlns="http://www.w3.org/2000/svg"
 					width="24"
 					height="24"

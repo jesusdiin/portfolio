@@ -1,7 +1,10 @@
 import React from 'react';
 import './footer.css';
+import { useLanguage } from '../../i18n/LanguageContext';
 
 function Footer() {
+	const { t } = useLanguage();
+
 	return (
 			<footer className="footer">
 				<div className="footer_container container">
@@ -9,15 +12,15 @@ function Footer() {
 
 					<ul className="footer_list">
 						<li>
-							<a href="#about" className="footer_link">About</a>
+							<a href="#about" className="footer_link">{t('footer.about')}</a>
 						</li>
 
 						<li>
-							<a href="#portfolio" className="footer_link">Projects</a>
+							<a href="#portfolio" className="footer_link">{t('footer.projects')}</a>
 						</li>
 						
 						<li>
-							<a href="#testimonials" className="footer_link">Testimonials</a>
+							<a href="#testimonials" className="footer_link">{t('footer.testimonials')}</a>
 						</li>
 					</ul>
 
