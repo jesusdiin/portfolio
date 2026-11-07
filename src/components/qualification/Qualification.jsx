@@ -41,7 +41,7 @@ const TABS = [
 
 function Qualification() {
 	const { t } = useLanguage();
-	const [active, setActive] = useState(TABS[0].key);
+	const [active, setActive] = useState('achievements');
 	const activeTab = TABS.find((tab) => tab.key === active);
 
 	return (
