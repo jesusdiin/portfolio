@@ -5,6 +5,13 @@
 .qualification_tabs {
     display: flex;
     justify-content: center;
+    margin-bottom: var(--mb-1);
+}
+
+.qualification_description {
+    text-align: center;
+    font-size: var(--small-font-size);
+    color: var(--text-color);
     margin-bottom: var(--mb-2);
 }
 
@@ -13,6 +20,9 @@
     font-weight: var(--font-medium);
     color: var(--title-color);
     margin: 0 var(--mb-1);
+    background: none;
+    border: none;
+    font-family: inherit;
     cursor: pointer;
 }
 
@@ -105,8 +115,39 @@
         grid-template-columns: initial;
     }
 
+    /* Tabs with underline indicator */
+    .qualification_tabs {
+        justify-content: space-around;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
     .qualification_button {
-       margin: 0 var(--mb-0-75);
+        flex: 1 1 0;
+        justify-content: center;
+        margin: 0 0 -1px;
+        padding: .75rem .25rem;
+        border-radius: 0;
+        border-bottom: 2px solid transparent;
+        font-size: var(--small-font-size);
+        color: var(--text-color);
+        transition: .3s;
+    }
+
+    .qualification_icon {
+        font-size: 1rem;
+    }
+
+    .qualification_active,
+    .qualification_active:hover {
+        color: var(--title-color-dark);
+        border-bottom-color: var(--title-color-dark);
+    }
+
+    .qualification_description {
+        font-size: var(--smaller-font-size);
+        margin-top: var(--mb-1);
+        margin-bottom: var(--mb-1-5);
+        text-wrap: balance;
     }
 
     .qualification_sections {

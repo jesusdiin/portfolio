@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './qualification.css';
 import { useLanguage } from '../../i18n/LanguageContext';
 
@@ -32,13 +32,16 @@ const TimelineItem = ({ item, index }) => {
 	);
 };
 
+const TABS = [
+	{ key: 'education', icon: 'uil-graduation-cap', items: 'educationItems' },
+	{ key: 'experience', icon: 'uil-briefcase-alt', items: 'experienceItems' },
+	{ key: 'achievements', icon: 'uil-trophy', items: 'achievementItems' },
+];
+
 function Qualification() {
 	const { t } = useLanguage();
-
-	const [toggleState, setToggleState] = useState(1);
-	const toggleTab = (index) => {
-		setToggleState(index);
-	}
+	const [active, setActive] = useState(TABS[0].key);
+	const activeTab = TABS.find((tab) => tab.key === active);
 
 	return (
 		<section className="qualification section">
@@ -47,36 +50,30 @@ function Qualification() {
 
 			<div className="qualification_container container">
 				<div className="qualification_tabs">
-					<div className={toggleState === 1 ? "qualification_button qualification_active button--flex": "qualification_button button--flex"}
-					onClick={() => toggleTab(1)}
-					>
-						<i className="uil uil-graduation-cap qualification_icon"></i> {t('qualification.education')}
-					</div>
-
-					<div className={toggleState === 2 ? "qualification_button qualification button--flex": "qualification_button button--flex"}
-					onClick={() => toggleTab (2)}
-					>
-						<i className="uil uil-briefcase-alt qualification_icon"></i>
-						{t('qualification.experience')}
-					</div>
+					{TABS.map((tab) => (
+						<button
+							type="button"
+							key={tab.key}
+							className={tab.key === active ? 'qualification_button qualification_active button--flex' : 'qualification_button button--flex'}
+							onClick={() => setActive(tab.key)}
+						>
+							<i className={`uil ${tab.icon} qualification_icon`}></i> {t(`qualification.${tab.key}`)}
+						</button>
+					))}
 				</div>
 
-				<div className="qualification_sections">
-					<div className={toggleState === 1 ? "qualification_content qualification_content_active" : "qualification_content"}>
-						{t('qualification.educationItems').map((item, i) => (
-							<TimelineItem item={item} index={i} key={i} />
-						))}
-					</div>
+				<p className="qualification_description">{t(`qualification.${active}Description`)}</p>
 
-					<div className={toggleState === 2 ? "qualification_content qualification_content_active" : "qualification_content"}>
-						{t('qualification.experienceItems').map((item, i) => (
+				<div className="qualification_sections">
+					<div className="qualification_content qualification_content_active" key={active}>
+						{t(`qualification.${activeTab.items}`).map((item, i) => (
 							<TimelineItem item={item} index={i} key={i} />
 						))}
 					</div>
 				</div>
 			</div>
 		</section>
-	)
+	);
 }
 
 export default Qualification;

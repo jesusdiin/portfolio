@@ -21,8 +21,8 @@ const App = () => {
             <main className='main'>
                 <Home />
                 <About />
-                <Skills />
                 <Services />
+                <Skills />
                 <Qualification />
                 <Contact />
             </main>

@@ -5,8 +5,8 @@ import { useLanguage } from '../../i18n/LanguageContext';
 const NAV_ITEMS = [
     { href: '#home', icon: 'uil-estate', key: 'home' },
     { href: '#about', icon: 'uil-user', key: 'about' },
-    { href: '#skills', icon: 'uil-file-alt', key: 'skills' },
     { href: '#services', icon: 'uil-briefcase-alt', key: 'services' },
+    { href: '#skills', icon: 'uil-file-alt', key: 'skills' },
     { href: '#portfolio', icon: 'uil-scenery', key: 'portfolio' },
     { href: '#contact', icon: 'uil-message', key: 'contact' },
 ];

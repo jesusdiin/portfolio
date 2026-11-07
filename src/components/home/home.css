@@ -172,6 +172,13 @@
             grid-column: 1/3;
         }
 
+        /* Align "Say Hello" to the right so it sits within thumb reach */
+        .home_data .button {
+            display: flex;
+            width: fit-content;
+            margin-left: auto;
+        }
+
         .home_img {
             box-shadow: inset 0 0 0 3px rgb(255 255 255 / 40%);
             width: 200px;
