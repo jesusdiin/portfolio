@@ -59,7 +59,7 @@
 }
 
 .home_img {
-    background: url(../../assets/profile_02.webp);
+    background: url(../../assets/profile_home.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -68,7 +68,9 @@
     justify-self: center;
     width: 300px;
     height: 300px;
-    animation: profile_animate 8s ease-in-out infinite 1s;
+    /* Same shape as the first keyframe so it never shows as a square */
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    animation: profile_animate 8s ease-in-out infinite;
 }
 
 @keyframes profile_animate {
@@ -111,8 +113,35 @@
 }
 
 .home_scroll_arrow {
-    font-size: 1.25rem; 
+    font-size: 1.25rem;
     color: var(--title-color);
+}
+
+/* ===== Page-load entrance (reveal-up keyframes live in reveal.css) ===== */
+@media (prefers-reduced-motion: no-preference) {
+    .home_img {
+        animation:
+            home-img-enter .8s cubic-bezier(.22, .61, .36, 1) backwards,
+            profile_animate 8s ease-in-out infinite;
+    }
+
+    .home_data > *,
+    .home_social {
+        animation: reveal-up .6s cubic-bezier(.22, .61, .36, 1) backwards;
+    }
+
+    .home_data > :nth-child(1) { animation-delay: 100ms; }
+    .home_data > :nth-child(2) { animation-delay: 200ms; }
+    .home_data > :nth-child(3) { animation-delay: 300ms; }
+    .home_data > :nth-child(4) { animation-delay: 400ms; }
+    .home_social { animation-delay: 500ms; }
+}
+
+@keyframes home-img-enter {
+    from {
+        opacity: 0;
+        transform: scale(.94);
+    }
 }
 
 

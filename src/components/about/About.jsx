@@ -5,6 +5,7 @@ import AboutImg from '../../assets/profile_01.webp';
 import ProfileImg from '../../assets/profile_02.webp';
 import CV from '../../assets/CV_Jesus_Hernandez_2026.pdf';
 import Info from './Info';
+import Reveal from '../reveal/Reveal';
 
 
 function About() {
@@ -15,7 +16,7 @@ function About() {
 			<h2 className="section_title">{t('about.title')}</h2>
 			<span className="section_subtitle">{t('about.subtitle')}</span>
 
-			<div className="about_container container grid">
+			<Reveal className="about_container container grid reveal--stagger">
 				<img src={AboutImg} alt="" className="about_img" />
 
 				<div className="about_data">
@@ -55,7 +56,7 @@ function About() {
               			</svg>
 					</a>
 				</div>				
-			</div>
+			</Reveal>
 		</section>
 	)
 }

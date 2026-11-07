@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './skills.css';
 import { useLanguage } from '../../i18n/LanguageContext';
+import Reveal from '../reveal/Reveal';
 
 // Icon names from translations → Boxicons classes
 const ICONS = {
@@ -54,7 +55,7 @@ function Skills() {
 			<span className="section_subtitle skills_subtitle">{t('skills.subtitle')}</span>
 			<p className="skills_description container">{t('skills.description')}</p>
 
-			<div className="skills_container container grid" ref={containerRef} onScroll={handleScroll}>
+			<Reveal className="skills_container container grid reveal--stagger" ref={containerRef} onScroll={handleScroll}>
 				{categories.map((category) => (
 					<div className="skills_card" key={category.icon}>
 						<div className="skills_header">
@@ -69,7 +70,7 @@ function Skills() {
 						</ul>
 					</div>
 				))}
-			</div>
+			</Reveal>
 
 			<div className="skills_dots">
 				{categories.map((category, i) => (

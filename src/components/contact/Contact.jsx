@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useLanguage } from '../../i18n/LanguageContext';
 import emailjs from '@emailjs/browser';
 import './contact.css';
+import Reveal from '../reveal/Reveal';
 
 function Contact() {
 	const { t } = useLanguage();
@@ -26,7 +27,7 @@ function Contact() {
 			<h2 className="section_title">{t('contact.title')}</h2>
 			<span className="section_subtitle">{t('contact.subtitle')}</span>
 
-			<div className="contact_container container grid">
+			<Reveal className="contact_container container grid reveal--stagger">
 				<div className="contact_content">
 					<h3 className="contact_title">{t('contact.talk')}</h3>
 
@@ -106,7 +107,7 @@ function Contact() {
 
 				</div>
 
-			</div>
+			</Reveal>
 
 		</section>
 	)

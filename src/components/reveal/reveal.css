@@ -1,0 +1,90 @@
+/*
+ * Scroll reveal animations.
+ * Keyframes with `animation-fill-mode: backwards` are used instead of transitions
+ * so they don't override hover transitions once the entrance finishes.
+ * Everything is opt-in for users without a reduced-motion preference.
+ */
+@media (prefers-reduced-motion: no-preference) {
+
+	/* ===== Staggered content blocks ===== */
+	.reveal--stagger:not(.is-visible) > * {
+		opacity: 0;
+	}
+
+	.reveal--stagger.is-visible > * {
+		animation: reveal-up .5s cubic-bezier(.22, .61, .36, 1) backwards;
+	}
+
+	.reveal--stagger.is-visible > :nth-child(2) { animation-delay: 70ms; }
+	.reveal--stagger.is-visible > :nth-child(3) { animation-delay: 140ms; }
+	.reveal--stagger.is-visible > :nth-child(4) { animation-delay: 210ms; }
+	.reveal--stagger.is-visible > :nth-child(5) { animation-delay: 280ms; }
+	.reveal--stagger.is-visible > :nth-child(6) { animation-delay: 350ms; }
+	.reveal--stagger.is-visible > :nth-child(7) { animation-delay: 420ms; }
+	.reveal--stagger.is-visible > :nth-child(8) { animation-delay: 490ms; }
+
+	/* ===== Timeline: the line draws itself, events enter from their side ===== */
+	.reveal--timeline:not(.is-visible) .qualification_data > * {
+		opacity: 0;
+	}
+
+	.reveal--timeline.is-visible .qualification_line {
+		transform-origin: top;
+		animation: timeline-draw .45s ease-out backwards;
+		animation-delay: calc(var(--i, 0) * 180ms + 120ms);
+	}
+
+	.reveal--timeline.is-visible .qualification_rounder {
+		animation: timeline-dot .3s ease-out backwards;
+		animation-delay: calc(var(--i, 0) * 180ms);
+	}
+
+	/* Left-side events (content is the first column) */
+	.reveal--timeline.is-visible .qualification_data:nth-child(odd) > :first-child {
+		animation: reveal-from-left .5s cubic-bezier(.22, .61, .36, 1) backwards;
+		animation-delay: calc(var(--i, 0) * 180ms + 80ms);
+	}
+
+	/* Right-side events (content is the third column) */
+	.reveal--timeline.is-visible .qualification_data:nth-child(even) > :nth-child(3) {
+		animation: reveal-from-right .5s cubic-bezier(.22, .61, .36, 1) backwards;
+		animation-delay: calc(var(--i, 0) * 180ms + 80ms);
+	}
+}
+
+@keyframes reveal-up {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+}
+
+@keyframes reveal-from-left {
+	from {
+		opacity: 0;
+		transform: translateX(-16px);
+	}
+}
+
+@keyframes reveal-from-right {
+	from {
+		opacity: 0;
+		transform: translateX(16px);
+	}
+}
+
+@keyframes timeline-dot {
+	from {
+		transform: scale(0);
+	}
+}
+
+/* Keeps the line's existing offset (translate(6px, -7px) in qualification.css) */
+@keyframes timeline-draw {
+	from {
+		transform: translate(6px, -7px) scaleY(0);
+	}
+	to {
+		transform: translate(6px, -7px) scaleY(1);
+	}
+}

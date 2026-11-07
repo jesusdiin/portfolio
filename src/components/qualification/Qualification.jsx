@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './qualification.css';
 import { useLanguage } from '../../i18n/LanguageContext';
+import Reveal from '../reveal/Reveal';
 
 // Timeline entries alternate sides: even index → left, odd index → right
 const TimelineItem = ({ item, index }) => {
@@ -22,7 +23,7 @@ const TimelineItem = ({ item, index }) => {
 	);
 
 	return (
-		<div className="qualification_data">
+		<div className="qualification_data" style={{ '--i': index }}>
 			{index % 2 === 0 ? (
 				<>{content}{marker}</>
 			) : (
@@ -65,11 +66,11 @@ function Qualification() {
 				<p className="qualification_description">{t(`qualification.${active}Description`)}</p>
 
 				<div className="qualification_sections">
-					<div className="qualification_content qualification_content_active" key={active}>
+					<Reveal className="qualification_content qualification_content_active reveal--timeline" key={active}>
 						{t(`qualification.${activeTab.items}`).map((item, i) => (
 							<TimelineItem item={item} index={i} key={i} />
 						))}
-					</div>
+					</Reveal>
 				</div>
 			</div>
 		</section>

@@ -92,6 +92,8 @@
 .services_modal_content {
 	width: 500px;
 	position: relative;
+	transform: translateY(16px) scale(.98);
+	transition: transform .3s cubic-bezier(.22, .61, .36, 1);
 	background-color: var(--container-color);
 	padding: 3.5rem 2.5rem 2.5rem;
 	border-radius: 1.5rem;
@@ -158,6 +160,17 @@
 .active_modal {
 	opacity: 1;
 	visibility: visible;
+}
+
+.active_modal .services_modal_content {
+	transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.services_modal_content {
+		transform: none;
+		transition: none;
+	}
 }
 
 /* ===== Breakpoints ===== */
